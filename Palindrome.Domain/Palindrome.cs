@@ -7,15 +7,16 @@ namespace  Palindrome.Domain
         public string InputWord { get; set; }
         public string ReverseWord { get; set; }
         public string[] ArrayTemp { get; set; }
+        public string[] ArrayInput { get; set; }
 
         public void CleanUpWordOrPhrase(string Input)
         {
             
             InputWord = Input.Trim().ToLower();
-            System.Console.WriteLine("Your clean input is:'{0}'",InputWord);
+            // System.Console.WriteLine("Your clean input is:'{0}'",InputWord);
             RemoveSpacesOrSpecialChar(InputWord);
             ReverseWordOrPhrase(InputWord);
-            System.Console.WriteLine(AreTheyPalindrome());
+            System.Console.WriteLine(AreTheyPalindrome()? "Congrats YOU HAVE A PALINDROME" : "SORRY NO A PALINDROME");
         }
 
         private void ReverseWordOrPhrase(string inputWord)
@@ -29,10 +30,7 @@ namespace  Palindrome.Domain
         public void RemoveSpacesOrSpecialChar(string Input){
             char[] delimetersNoise = { ' ',';','.',':','\t'};
             ArrayTemp = Input.Split(delimetersNoise);
-            foreach ( var word in ArrayTemp)
-            {
-                System.Console.WriteLine("Your Temp Array: {0}",word);     
-            }
+            ReverseWord = String.Join("",ArrayTemp);
             
         }
         public bool AreTheyPalindrome()
