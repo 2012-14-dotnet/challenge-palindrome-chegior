@@ -10,6 +10,7 @@ namespace Palindrome.Client
         {
             CPalindrome PalindromeInst = new CPalindrome();
             Console.WriteLine("+++Welcome to Palindrome");
+            
             Console.Write("Pleae type your word or phrase: ");
             PalindromeInst.CleanUpWordOrPhrase(Console.ReadLine());
         }
