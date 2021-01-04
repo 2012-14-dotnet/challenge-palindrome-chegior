@@ -17,7 +17,7 @@ namespace Palindrome.Client
                 MainMenuUser();
                 switch (opt = Console.ReadLine())
                 {
-                    case "1":Console.WriteLine("1"); break;
+                    case "1":Console.WriteLine("Lets enter the input....");Option1Menu(PalindromeInst); break;
                     case "2":Console.WriteLine("2");break;
                     case "3":Console.WriteLine("3");break;
                     case "4":Console.WriteLine("4");break;
@@ -25,8 +25,7 @@ namespace Palindrome.Client
                 }
             }
 
-            // Console.Write("Pleae type your word or phrase: ");
-            // PalindromeInst.CleanUpWordOrPhrase(Console.ReadLine());
+            // 
         }
         static void MainMenuUser()
         {
@@ -40,6 +39,12 @@ namespace Palindrome.Client
             Console.WriteLine("3.- What's Palindrome");
             Console.WriteLine("4.- Exit");
             
+        }
+
+        static void Option1Menu(CPalindrome cp)
+        {
+            Console.Write("Pleae type your word or phrase: ");
+            cp.CleanUpWordOrPhrase(Console.ReadLine());
         }
     }
 }
